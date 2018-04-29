@@ -1,0 +1,16 @@
+.group:not(:nth-of-type(1)) {
+  margin-top: 2rem;
+}
+
+.group > .title {
+  color: #acacac;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  min-height: 1rem;
+  text-transform: uppercase;
+}
+
+.group.all > .title {
+  visibility: hidden;
+}

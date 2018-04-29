@@ -1,0 +1,264 @@
+.form.settings {
+  opacity: 0;
+  position: relative;
+  transition: opacity 0.25s linear;
+  width: 50%;
+}
+
+.form.settings.enabled {
+  opacity: 1;
+}
+
+.form.settings .fields {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.form.settings > fieldset > .title {
+  display: none;
+}
+
+.form.settings .field.query label,
+.form.settings .field.grouping label,
+.form.settings .field.sorting label {
+  display: none;
+}
+
+.form.settings .field.query,
+.form.settings .field.rating {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.form.settings .field.grouping,
+.form.settings .field.sorting {
+  margin-top: 1rem;
+}
+
+.form.settings .field.query {
+  position: relative;
+}
+
+.form.settings .field.query:before,
+.form.settings .field.query:after {
+  content: '';
+  display: block;
+  position: absolute;
+}
+
+.form.settings .field.query:before {
+  border: solid 2px #6dc2e8;
+  border-radius: 50%;
+  height: 7.5px;
+  right: 18px;
+  top: 8px;
+  width: 7.5px;
+  z-index: 1;
+}
+
+.form.settings .field.query:after {
+  background-color: #6dc2e8;
+  height: 10px;
+  right: 15px;
+  top: 15px;
+  transform: rotate(-50deg);
+  width: 2px;
+}
+
+.form.settings .field input[type="text"],
+.form.settings .field select {
+  border: solid 1px #6dc2e8;
+  border-radius: 20px;
+  color: #6dc2e8;
+  display: block;
+  font-size: 0.8rem;
+  font-weight: bold;
+  outline: none;
+  overflow: hidden;
+  transition:
+    border-color 0.25s linear,
+    color 0.25s linear,
+    opacity 0.25s linear;
+}
+
+.form.settings .field input[type="text"]:focus,
+.form.settings .field select:focus {
+  border-color: #f46036;
+  color: #f46036;
+}
+
+.form.settings .field input[type="text"]:disabled,
+.form.settings .field select:disabled {
+  opacity: 0.25;
+}
+
+.form.settings .field input[type="text"] {
+  padding: 0.5rem 2.5rem 0.5rem 1.5rem;
+  width: calc(100% - 4rem);
+}
+
+.form.settings .field input[type="text"]::-webkit-input-placeholder {
+  color: inherit;
+  font: inherit;
+}
+
+.form.settings .field input[type="text"]::-moz-placeholder {
+  color: inherit;
+  font: inherit;
+}
+
+.form.settings .field input[type="text"]:-ms-input-placeholder {
+  color: inherit;
+  font: inherit;
+}
+
+.form.settings .field input[type="text"]:-moz-placeholder {
+  color: inherit;
+  font: inherit;
+}
+
+.form.settings .field select {
+  padding: 0.5rem 1.25rem;
+  width: 90%;
+}
+
+.form.settings .field select:not(:disabled) {
+  cursor: pointer;
+}
+
+.form.settings .field.sorting select {
+  margin: 0 0 0 auto;
+}
+
+.form.settings .field.rating {
+  margin: 1rem 0.5rem 0 0.5rem;
+}
+
+.form.settings .field.rating > .title {
+  color: #c5c7c8;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.form.settings .field.rating .options {
+  display: flex;
+  flex-direction: row;
+}
+
+.form.settings .field.rating .option {
+  overflow: hidden;
+  position: relative;
+}
+
+.form.settings .field.rating .option:not(:first-child) {
+  margin-left: 1rem;
+}
+
+.form.settings .field.rating input[type="checkbox"] {
+  left: -9999px;
+  position: absolute;
+  top: -9999px;
+}
+
+.form.settings .field.rating label {
+  color: #d8d8d8;
+  cursor: pointer;
+  padding-left: 22px;
+  position: relative;
+  transition:
+    color 0.25s linear,
+    opacity 0.25s linear;
+}
+
+.form.settings .field.rating input[type="checkbox"]:focus + label {
+  color: #f46036;
+}
+
+.form.settings .field.rating input[type="checkbox"]:disabled + label {
+  cursor: default;
+  opacity: 0.25;
+}
+
+.form.settings .field.rating label:before,
+.form.settings .field.rating label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition:
+    background-color 0.25s linear,
+    border-color 0.25s linear;
+}
+
+.form.settings .field.rating label:before {
+  border: solid 2px #52afd9;
+  border-radius: 5px;
+  height: 14px;
+  left: 0;
+  width: 14px;
+}
+
+.form.settings .field.rating input[type="checkbox"]:focus + label:before {
+  border-color: #f46036;
+}
+
+.form.settings .field.rating input[type="checkbox"]:checked + label:after {
+  background-color: #52afd9;
+  border-radius: 3px;
+  height: 10px;
+  left: 4px;
+  width: 10px;
+}
+
+.form.settings .field.rating input[type="checkbox"]:focus:checked + label:after {
+  background-color: #f46036;
+}
+
+.form.settings .field.rating label em {
+  font-size: 0;
+}
+
+.form.settings .field.rating label em:before {
+  content: '\2605';
+  display: inline-block;
+  font-size: 1.25rem;
+}
+
+.form.settings .control.submit {
+  position: absolute;
+  right: -100%;
+  top: calc(100% + 2.5rem)
+}
+
+.form.settings .control button {
+  background-color: #83939d;
+  box-shadow: 3px 3px 5px -2px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  outline: none;
+  padding: 0.5rem 3rem;
+  text-transform: uppercase;
+  transition:
+    background-color 0.25s linear,
+    opacity 0.25s linear;
+}
+
+.form.settings .control button:disabled {
+  pointer-events: none;
+  opacity: 0.25;
+}
+
+.form.settings .control button:hover {
+  background-color: #1298c4;
+}
+
+.form.settings .control button:focus {
+  background-color: #f46036;
+}

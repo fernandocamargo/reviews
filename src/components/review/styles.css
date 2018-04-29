@@ -1,0 +1,133 @@
+.review {
+  border: solid 1px #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.review:not(:nth-of-type(1)) {
+  margin-top: 2rem;
+}
+
+.review > .title,
+.review .attribute.avatar figcaption,
+.review .attribute.product dt,
+.review .attribute.content dt {
+  display: none;
+}
+
+.review .attributes {
+  padding: 1rem;
+}
+
+@media only screen and (min-width: 650px) {
+  .review .attributes {
+    display: grid;
+    grid-template-columns: 10% 15% 15% 60%;
+  }
+}
+
+.review .attribute.rating {
+  min-height: 2rem;
+}
+
+@media only screen and (max-width: 650px) {
+  .review .attribute.date,
+  .review .attribute.rating,
+  .review .attribute.product {
+    margin-top: 1rem;
+  }
+}
+
+.review .attribute.avatar img {
+  border: solid 1px #d8d8d8;
+  border-radius: 5px;
+  display: block;
+  height: 48px;
+  overflow: hidden;
+  width: 48px;
+}
+
+.review .attribute.date dt,
+.review .attribute.rating dt,
+.review .attribute.product dd:first-of-type {
+  color: #a1a7a9;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.review .attribute.date dd,
+.review .attribute.product dd:not(:first-of-type) {
+  font-weight: 700;
+}
+
+.review .attribute.date dd {
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+.review .attribute.rating dd {
+  font-size: 0;
+  position: relative;
+}
+
+.review .attribute.rating dd:before,
+.review .attribute.rating dd:after {
+  display: block;
+  font-size: 1rem;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.review .attribute.rating dd:before {
+  content: '\2606\2606\2606\2606\2606';
+}
+
+.review .attribute.rating.rating-1 dd:after {
+  content: '\2605';
+}
+
+.review .attribute.rating.rating-2 dd:after {
+  content: '\2605\2605';
+}
+
+.review .attribute.rating.rating-3 dd:after {
+  content: '\2605\2605\2605';
+}
+
+.review .attribute.rating.rating-4 dd:after {
+  content: '\2605\2605\2605\2605';
+}
+
+.review .attribute.rating.rating-5 dd:after {
+  content: '\2605\2605\2605\2605\2605';
+}
+
+.review .attribute.product dd:not(:first-of-type) {
+  font-size: 0.9rem;
+  margin-top: 0.1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.review .attribute.content {
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.review .attribute.content dd {
+  font-size: 0.9rem;
+}
+
+.review .attribute.content dd h4 {
+  color: #444f53;
+  font-weight: 700;
+  margin-top: 1.5rem;
+}
+
+.review .attribute.content dd p {
+  color: #7c8386;
+  margin-top: 0.5rem;
+}

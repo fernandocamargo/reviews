@@ -1,0 +1,7 @@
+nav > *:first-child {
+  display: none;
+}
+
+figure {
+  margin: 0;
+}

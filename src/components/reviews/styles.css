@@ -1,0 +1,8 @@
+.reviews {
+  margin: 1rem;
+  min-width: 300px;
+}
+
+.reviews > .title {
+  display: none;
+}

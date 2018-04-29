@@ -1,0 +1,12 @@
+.results {
+  margin-top: 3rem;
+}
+
+.results > .loading:first-child {
+  margin-top: 10rem;
+}
+
+.results .empty {
+  font-size: 1rem;
+  font-weight: 700;
+}
